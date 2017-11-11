@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
 
     //Grounding Check
     private bool _onGround = false;
+	
+	
+    public CharacterAnimator rig;
 
     // Use this for initialization
     void Start()
@@ -37,11 +40,23 @@ public class PlayerController : MonoBehaviour
         // Rotate the movement vector based on the camera
         velocityAxis = Quaternion.AngleAxis(Camera.main.transform.eulerAngles.y, Vector3.up) * velocityAxis;
 
+		
+		
+		
         // Rotate the player's model to show direction
         if (velocityAxis.magnitude > 0)
         {
+			
+						if(_onGround){
+			rig.Run();
+			}
             transform.rotation = Quaternion.LookRotation(velocityAxis);
-        }
+        }else{
+			if(_onGround){
+			rig.Idle();
+			}
+		
+		}
 
         // Move the player
         GetComponent<Rigidbody>().AddForce(velocityAxis.normalized * acceleration);
@@ -79,6 +94,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_onGround)
         {
+			rig.Jump();
             GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpStrength, 0));
         }
     }
@@ -105,6 +121,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.layer == 8)
         {
             //print("landed");
+			rig.Land();
             _onGround = true;
         }
     }

@@ -62,7 +62,7 @@ ModelImporter:
     400052: Root
     400054: transform2
     4300000: NakedChainMailDude
-    7400000: MidAir
+    7400000: Jump
     9500000: //RootNode
     11100000: //RootNode
     13700000: NakedChainMailDude
@@ -99,7 +99,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: MidAir
+      name: Jump
       takeName: Take 001
       firstFrame: 1
       lastFrame: 120

@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class CharacterAnimator : MonoBehaviour {
 
-AnimationClip Idle;
-AnimationClip Run;
-AnimationClip MidAir;
-AnimationClip Land;
+public Animation anim;
 
 
-	void Start () {
-		
+	public void Run () {
+		anim.CrossFade("Run",0.15f);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	public void Idle () {
+		anim.CrossFade("Idle",0.15f);
 	}
+	
+	public void Jump () {
+		anim.CrossFade("Jump",0.15f);
+	}
+	
+	public void Land () {
+		anim.CrossFade("Land",0.15f);
+	}
+	
 }
