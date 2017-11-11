@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerPadTrigger : MonoBehaviour {
-
-    public int platformCount = 0;
-
     
     public GameObject[] platforms;
 
