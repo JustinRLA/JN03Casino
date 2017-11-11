@@ -7,20 +7,31 @@ public class PlatformController : MonoBehaviour {
     public string platformType = "";
 	public AnimationClip animations;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public Material[] blockMaterials;
+    public Material[] litBlockMaterials;
+    public int usableByPlayer;
+
+    // Use this for initialization
+    void Start () {
+        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
-    public void Activated()
+    public void Activated(bool initialActivationPlatform)
     {
-		
-	GetComponent<Animation>().CrossFade("PressurePlateRise");
+        //Prevent repeat calling of animation
+        if (initialActivationPlatform)
+        {
+            GetComponent<Animation>().CrossFade("PressurePlateRise");
+        }
+        GetComponent<BoxCollider>().enabled = true;
+        GetComponent<Renderer>().material = litBlockMaterials[usableByPlayer];
+        
 		
         if(platformType == "Solidify")
         {
@@ -30,7 +41,9 @@ public class PlatformController : MonoBehaviour {
 
     public void Deactivated()
     {
-    GetComponent<Animation>().CrossFade("PressurePlateLower");
+        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
+        GetComponent<Animation>().CrossFade("PressurePlateLower");
 
     }
 }

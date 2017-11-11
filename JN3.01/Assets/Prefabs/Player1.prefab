@@ -56,8 +56,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1626130684136732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5837486, y: 4.49, z: -0.07019663}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.61, y: 2.16, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4773803348854538}
   m_Father: {fileID: 0}
@@ -70,8 +70,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323070165765584}
   m_LocalRotation: {x: -0.688755, y: -0, z: -0, w: 0.7249942}
-  m_LocalPosition: {x: 0, y: 0.15, z: 1.02}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.39, z: 0.27}
+  m_LocalScale: {x: 1, y: 0.13930167, z: 1}
   m_Children: []
   m_Father: {fileID: 4588451798501566}
   m_RootOrder: 0
@@ -184,9 +184,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4ff00882b132f4387c1c3b49b3d90f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 30
-  MaxSpeed: 20
-  JumpStrength: 500
+  acceleration: 30
+  maxSpeed: 20
+  jumpStrength: 500
   horizontalMove: P1_Horizontal
   verticalMove: P1_Vertical
   jump: P1_Jump
@@ -211,8 +211,8 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323070165765584}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1

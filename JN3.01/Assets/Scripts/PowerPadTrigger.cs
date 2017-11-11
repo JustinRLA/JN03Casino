@@ -8,50 +8,55 @@ public class PowerPadTrigger : MonoBehaviour {
 	public GameObject plateMesh;
 	public Material[] pressurePlateMaterials;
 	public Material[] litPressurePlateMaterials;
-	public Material[] blockMaterials;
-	public Material[] litBlockMaterials;
 	public int usableByPlayer; // 0 = both, 1 = p1, 2 = p2
 	public AudioClip pressed;
 	public AudioClip depressed;
 	Renderer skin;
 	
     void Start () {
-		
+		//PowerPad initialisations
 		skin = plateMesh.GetComponent<Renderer>();
 		skin.material = pressurePlateMaterials[usableByPlayer];
 
-        foreach (GameObject gO in platforms)
-        {
-		gO.GetComponent<BoxCollider>().enabled = false;
-		gO.GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
+        //Platform Initialisations
+        int i = 0;
+        foreach (GameObject gO in platforms) {
+            if (gO.CompareTag("Platform"))
+            {
+                platforms[i] = gO;
+                i++;
+            }
         }
 		
     }
 
-    public void Activate()
+    public void Activate(bool initialActivation)
     {
-		
-        GetComponent<AudioSource>().PlayOneShot(pressed,1.0f);
-		skin.material = litPressurePlateMaterials[usableByPlayer];
-		
+        //Press PowerPad
+        if (initialActivation)
+        {
+            //Only trigger sound at start
+            GetComponent<AudioSource>().PlayOneShot(pressed, 1.0f);
+        }
+        skin.material = litPressurePlateMaterials[usableByPlayer];
+
+        //Activate platforms
         foreach (GameObject gO in platforms)
         {
-            gO.GetComponent<BoxCollider>().enabled = true;
-			gO.GetComponent<Renderer>().material = litBlockMaterials[usableByPlayer];
-            gO.GetComponent<PlatformController>().Activated();
+            gO.GetComponent<PlatformController>().Activated(initialActivation);
         }
     }
+
     public void Deactivate()
     {
+        //Depress PowerPad
         GetComponent<AudioSource>().PlayOneShot(depressed,1.0f);
 		skin.material = pressurePlateMaterials[usableByPlayer];
+
+        //Deactivate platforms
         foreach (GameObject gO in platforms)
         {
-            gO.GetComponent<BoxCollider>().enabled = false;
-			gO.GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
             gO.GetComponent<PlatformController>().Deactivated();
-
-
         }
     }
 }
