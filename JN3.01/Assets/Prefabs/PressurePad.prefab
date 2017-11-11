@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc080e88c2f7fe743bff2d84239ece4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformType: 
+  platformType: Standard
   animations: {fileID: 0}
   blockMaterials:
   - {fileID: 2100000, guid: 4950ac17ae6497a4783ad993698e523f, type: 2}
@@ -538,4 +538,3 @@ MonoBehaviour:
   usableByPlayer: 1
   pressed: {fileID: 0}
   depressed: {fileID: 0}
-  active: 0
