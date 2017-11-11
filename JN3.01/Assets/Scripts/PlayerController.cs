@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "PowerPad")
         {
-            if (Input.GetButtonDown(power) || Input.GetButton(power))
+            if (Input.GetButtonDown(power))
             {
                 col.GetComponent<PowerPadTrigger>().Activate();
                 ActivateTrigger(true);
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "PowerPad")
+        if (col.gameObject.tag == "PowerPad" && Input.GetButton(power))
         {
             col.GetComponent<PowerPadTrigger>().Deactivate();
         }

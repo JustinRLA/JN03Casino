@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/AlexisGym.unity
+- path: Assets/Scenes/LevelArtWorkshop.unity
   isLoaded: 1
   isActive: 1

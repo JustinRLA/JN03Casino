@@ -5,39 +5,53 @@ using UnityEngine;
 public class PowerPadTrigger : MonoBehaviour {
     
     public GameObject[] platforms;
-
-    // Use this for initialization
+	public GameObject plateMesh;
+	public Material[] pressurePlateMaterials;
+	public Material[] litPressurePlateMaterials;
+	public Material[] blockMaterials;
+	public Material[] litBlockMaterials;
+	public int usableByPlayer; // 0 = both, 1 = p1, 2 = p2
+	public AudioClip pressed;
+	public AudioClip depressed;
+	Renderer skin;
+	
     void Start () {
+		
+		skin = plateMesh.GetComponent<Renderer>();
+		skin.material = pressurePlateMaterials[usableByPlayer];
+
         foreach (GameObject gO in platforms)
         {
-            gO.GetComponent<BoxCollider>().enabled = false;
-            gO.GetComponent<MeshRenderer>().enabled = false;
+		gO.GetComponent<BoxCollider>().enabled = false;
+		gO.GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
         }
-    }
-	
-	// Update is called once per frame
-	void Update () {
 		
-	}
+    }
 
     public void Activate()
     {
-        print("platforms activated");
+		
+        GetComponent<AudioSource>().PlayOneShot(pressed,1.0f);
+		skin.material = litPressurePlateMaterials[usableByPlayer];
+		
         foreach (GameObject gO in platforms)
         {
             gO.GetComponent<BoxCollider>().enabled = true;
-            gO.GetComponent<MeshRenderer>().enabled = true;
+			gO.GetComponent<Renderer>().material = litBlockMaterials[usableByPlayer];
             gO.GetComponent<PlatformController>().Activated();
         }
     }
     public void Deactivate()
     {
-        print("platforms activated");
+        GetComponent<AudioSource>().PlayOneShot(depressed,1.0f);
+		skin.material = pressurePlateMaterials[usableByPlayer];
         foreach (GameObject gO in platforms)
         {
-            gO.GetComponent<PlatformController>().Deactivated();
             gO.GetComponent<BoxCollider>().enabled = false;
-            gO.GetComponent<MeshRenderer>().enabled = false;
+			gO.GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
+            gO.GetComponent<PlatformController>().Deactivated();
+
+
         }
     }
 }

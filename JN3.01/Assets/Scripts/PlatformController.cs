@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlatformController : MonoBehaviour {
 
     public string platformType = "";
+	public AnimationClip animations;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,9 @@ public class PlatformController : MonoBehaviour {
 
     public void Activated()
     {
+		
+	GetComponent<Animation>().CrossFade("PressurePlateRise");
+		
         if(platformType == "Solidify")
         {
             
@@ -26,7 +30,7 @@ public class PlatformController : MonoBehaviour {
 
     public void Deactivated()
     {
-        //ANIMATION: DISSAPEAR
+    GetComponent<Animation>().CrossFade("PressurePlateLower");
 
     }
 }
