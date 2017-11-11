@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/LevelArtWorkshop.unity
+=======
+- path: Assets/Scenes/JustinGym.unity
+>>>>>>> 46112a2c5ccf22c50102ceb481fd434505839046
   isLoaded: 1
   isActive: 1
