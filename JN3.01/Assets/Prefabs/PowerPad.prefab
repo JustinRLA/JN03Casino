@@ -190,7 +190,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1978159808346374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfb45c473bdbfd346ba3d5f01eb5ec78, type: 3}
+  m_Script: {fileID: 11500000, guid: dc080e88c2f7fe743bff2d84239ece4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   platformType: 
@@ -202,9 +202,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1228280291968252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1d8543aab19672488adc619d6c42470, type: 3}
+  m_Script: {fileID: 11500000, guid: 381771945745c8148a2ed5c3253c7c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformCount: 0
+  platformCount: 1
   platforms:
   - {fileID: 1978159808346374}

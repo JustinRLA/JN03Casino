@@ -181,16 +181,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1815937292317700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e30bad90650a748bd907e05d63fff5, type: 3}
+  m_Script: {fileID: 11500000, guid: cf4ff00882b132f4387c1c3b49b3d90f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Acceleration: 30
-  MaxSpeed: 30
+  MaxSpeed: 20
   JumpStrength: 500
   horizontalMove: P1_Horizontal
   verticalMove: P1_Vertical
   jump: P1_Jump
-  activate: P1_Activate
+  power: P1_Power
 --- !u!136 &136175381220227778
 CapsuleCollider:
   m_ObjectHideFlags: 1
