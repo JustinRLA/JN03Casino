@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 12130
+  controlID: 9
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 12131
+  controlID: 10
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 12132
+  controlID: 11
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -366,9 +366,9 @@ MonoBehaviour:
     height: 539
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3654fcff
-    m_LastClickedID: -240586
-    m_ExpandedIDs: 6e53fcff9a53fcffcc53fcff1654fcff3654fcffacf4ffffcef4fffffcf4ffff0af5ffff3cf5ffff44f5ffffeef9ffff00000000602f00006c2f00000430000014300000
+    m_SelectedIDs: bc310000
+    m_LastClickedID: 12732
+    m_ExpandedIDs: d6f9ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -423,9 +423,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.33821678, y: 17.882496, z: 59.28286}
+    m_Target: {x: 3.5568225, y: 22.638699, z: 59.72135}
     speed: 2
-    m_Value: {x: -0.33821678, y: 17.882496, z: 59.28286}
+    m_Value: {x: 3.5568225, y: 22.638699, z: 59.72135}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -448,9 +448,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.108928025, y: -0.890004, z: 0.33534682, w: -0.2890852}
+    m_Target: {x: -0.2743722, y: 0.35729453, z: -0.11066078, w: -0.8858977}
     speed: 2
-    m_Value: {x: -0.10892801, y: -0.89000386, z: 0.3353468, w: -0.28908518}
+    m_Value: {x: -0.2743722, y: 0.35729453, z: -0.11066078, w: -0.8858977}
   m_Size:
     m_Target: 2.0208292
     speed: 2
@@ -530,19 +530,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 92
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: 92
   m_LastProjectPath: C:\Users\alexi\Documents\RepoCasino\JN03Casino\JN3.01
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 472}
-    m_SelectedIDs: b0290000
-    m_LastClickedID: 10672
-    m_ExpandedIDs: 00000000ce2800000a290000ae290000f82900000c2a0000642a00006c2a00006e2a0000d42a0000de2a0000c22b0000da2b0000a42c000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 552}
+    m_SelectedIDs: 90300000
+    m_LastClickedID: 12432
+    m_ExpandedIDs: 00000000822d0000c62d0000482e0000942e0000a62e0000e02e0000ea2e0000f22e0000f42e00004c2f0000562f0000103000002a3000004831000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -570,7 +570,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ce2800000a290000ae290000f82900000c2a0000642a00006c2a00006e2a0000d42a0000de2a0000c22b0000da2b0000a42c000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000822d0000c62d0000482e0000942e0000a62e0000ea2e0000f22e0000f42e00004c2f0000562f0000103000002a30000048310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
