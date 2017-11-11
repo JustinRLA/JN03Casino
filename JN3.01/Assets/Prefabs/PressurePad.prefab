@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4961133108045874}
   - component: {fileID: 33475050423703774}
   - component: {fileID: 23854954093284528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 65201508153496316}
   - component: {fileID: 114843435308353902}
   - component: {fileID: 82947068659187888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger
   m_TagString: PowerPad
   m_Icon: {fileID: 0}
@@ -60,9 +60,9 @@ GameObject:
   - component: {fileID: 65084387944216538}
   - component: {fileID: 111293187018804314}
   - component: {fileID: 114176532502004426}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Block
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 33319941320789066}
   - component: {fileID: 23812741963307186}
   - component: {fileID: 64152019537288638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PressurePad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1463318066366234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.79, y: 0.58, z: -0.37100124}
+  m_LocalPosition: {x: -3.291121, y: 0.65, z: 3.1835938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4961133108045874}
@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1278371307596668}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0016867518, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4832060136055154}
@@ -151,14 +151,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1435037236448996}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 0.013000011, z: -0.06999877}
+  m_LocalRotation: {x: -0.6501141, y: -0.3110329, z: -0.29919615, w: 0.62537336}
+  m_LocalPosition: {x: 2.3335168, y: 0.11, z: -0.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4788665871790882}
   m_Father: {fileID: 4047021783960034}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -92.22199, y: -0.000015258789, z: -51.135986}
 --- !u!4 &4961133108045874
 Transform:
   m_ObjectHideFlags: 1
@@ -186,7 +186,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dfb416d900fb7ae41a2b94886fe5ea01, type: 2}
+  - {fileID: 2100000, guid: 4950ac17ae6497a4783ad993698e523f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -254,7 +254,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 275799ef2e6d166468c157f1af8cc593, type: 2}
+  - {fileID: 2100000, guid: e44b8ff94ec48a4479c40bcb2e7454a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -365,7 +365,7 @@ MeshCollider:
   m_GameObject: {fileID: 1435037236448996}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 1
   m_InflateMesh: 0
@@ -381,8 +381,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.90716, y: 0.90715986, z: 0.90716}
-  m_Center: {x: 0, y: -0.4288636, z: 0}
+  m_Size: {x: 0.93236506, y: 0.9071599, z: 0.9423988}
+  m_Center: {x: -0.012603092, y: -0.42886397, z: 0.017619327}
 --- !u!65 &65201508153496316
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -393,8 +393,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.5062995, z: 1}
+  m_Center: {x: 0, y: -0.24685025, z: 0}
 --- !u!82 &82947068659187888
 AudioSource:
   m_ObjectHideFlags: 1
@@ -504,6 +504,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformType: 
   animations: {fileID: 0}
+  blockMaterials:
+  - {fileID: 2100000, guid: 4950ac17ae6497a4783ad993698e523f, type: 2}
+  - {fileID: 2100000, guid: 852907aa2ab7e4f4aaae7b31a58e1bd8, type: 2}
+  - {fileID: 2100000, guid: da706dcced38755409ff922561b84fdf, type: 2}
+  litBlockMaterials:
+  - {fileID: 2100000, guid: 51bb301c311f71d40b8c4d979c3fee18, type: 2}
+  - {fileID: 2100000, guid: 3fdd7630d485d6e49b99e06ef6ff4538, type: 2}
+  - {fileID: 2100000, guid: dfb416d900fb7ae41a2b94886fe5ea01, type: 2}
+  usableByPlayer: 0
 --- !u!114 &114843435308353902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -526,14 +535,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 9d1378848ac0fae449f1706b80840edb, type: 2}
   - {fileID: 2100000, guid: dcc7882a452799b4581fceb451731235, type: 2}
   - {fileID: 2100000, guid: 275799ef2e6d166468c157f1af8cc593, type: 2}
-  blockMaterials:
-  - {fileID: 2100000, guid: 4950ac17ae6497a4783ad993698e523f, type: 2}
-  - {fileID: 2100000, guid: 852907aa2ab7e4f4aaae7b31a58e1bd8, type: 2}
-  - {fileID: 2100000, guid: da706dcced38755409ff922561b84fdf, type: 2}
-  litBlockMaterials:
-  - {fileID: 2100000, guid: 51bb301c311f71d40b8c4d979c3fee18, type: 2}
-  - {fileID: 2100000, guid: 3fdd7630d485d6e49b99e06ef6ff4538, type: 2}
-  - {fileID: 2100000, guid: dfb416d900fb7ae41a2b94886fe5ea01, type: 2}
   usableByPlayer: 1
   pressed: {fileID: 0}
   depressed: {fileID: 0}
+  active: 0
