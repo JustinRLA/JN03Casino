@@ -15,7 +15,7 @@ public class PlatformController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<BoxCollider>().enabled = true;
         GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
     }
 	
@@ -34,7 +34,7 @@ public class PlatformController : MonoBehaviour {
                 GetComponent<Animation>().CrossFade("PressurePlateRise");
             }
             //Stays active as long as you're in
-            GetComponent<BoxCollider>().enabled = true;
+            //GetComponent<BoxCollider>().enabled = true;
             GetComponent<Renderer>().material = litBlockMaterials[usableByPlayer];
         }
         if (platformType == "Solidify")
@@ -45,7 +45,7 @@ public class PlatformController : MonoBehaviour {
                 if (initialActivationPlatform)
                 {
                     GetComponent<Animation>().CrossFade("PressurePlateRise");
-                    GetComponent<BoxCollider>().enabled = true;
+                    //GetComponent<BoxCollider>().enabled = true;
                     GetComponent<Renderer>().material = litBlockMaterials[usableByPlayer];
                 }
                 isActive = true;
@@ -59,7 +59,7 @@ public class PlatformController : MonoBehaviour {
         if (platformType == "Standard")
         {
             //Deactivate
-            GetComponent<BoxCollider>().enabled = false;
+            //GetComponent<BoxCollider>().enabled = false;
             GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
             GetComponent<Animation>().CrossFade("PressurePlateLower");
         }

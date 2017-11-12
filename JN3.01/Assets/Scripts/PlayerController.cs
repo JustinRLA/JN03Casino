@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     //Grounding Check
     private bool _onGround = false;
+    public int myID = 0;
 	
 	
     public CharacterAnimator rig;
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        WhoAmI();
     }
 
     void Update()
@@ -41,22 +42,22 @@ public class PlayerController : MonoBehaviour
         // Rotate the movement vector based on the camera
         velocityAxis = Quaternion.AngleAxis(Camera.main.transform.eulerAngles.y, Vector3.up) * velocityAxis;
 
-		
-		
-		
         // Rotate the player's model to show direction
         if (velocityAxis.magnitude > 0)
         {
 			
-						if(_onGround){
-			rig.Run();
+			if(_onGround)
+            {
+			    rig.Run();
 			}
             transform.rotation = Quaternion.LookRotation(velocityAxis);
-        }else{
-			if(_onGround){
-			rig.Idle();
+        }
+        else
+        {
+			if(_onGround)
+            {
+			    rig.Idle();
 			}
-		
 		}
 
         // Move the player
@@ -73,10 +74,6 @@ public class PlayerController : MonoBehaviour
         }
 
         LimitVelocity();
-    }
-
-    void FixedUpdate()
-    {
     }
 
     //Limit velocity to maxSpeed
@@ -97,6 +94,22 @@ public class PlayerController : MonoBehaviour
         {
 			rig.Jump();
             GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpStrength, 0));
+        }
+    }
+
+    private void WhoAmI()
+    {
+        if (gameObject.tag == "Player1")
+        {
+            myID = 1;
+        }
+        else if (gameObject.tag == "Player2")
+        {
+            myID = 2;
+        }
+        else
+        {
+            print("am I even real?");
         }
     }
 
@@ -127,6 +140,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Ground checks
+    void OnCollisionStay(Collision col)
+    {
+        //Use layer "Ground" as check to verify collision
+        if (col.gameObject.layer == 8 && !_onGround)
+        {
+            //print("landed");
+            rig.Land();
+            _onGround = true;
+        }
+    }
+
     //Deactivate grounding when jumping
     void OnCollisionExit(Collision col)
     {
@@ -139,7 +164,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "PowerPad")
+        if (col.gameObject.tag == "PowerPad" && myID == col.GetComponent<PowerPadTrigger>().usableByPlayer || col.GetComponent<PowerPadTrigger>().usableByPlayer == 0)
         {
             col.GetComponent<PowerPadTrigger>().Activate(true);
             ActivateTrigger(true);
@@ -158,7 +183,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerStay(Collider col)
     {
         //When in the zone of a Power Pad, check for power use to trigger pad's effects
-        if (col.gameObject.tag == "PowerPad")
+        if (col.gameObject.tag == "PowerPad" && myID == col.GetComponent<PowerPadTrigger>().usableByPlayer || col.GetComponent<PowerPadTrigger>().usableByPlayer == 0)
         {
             col.GetComponent<PowerPadTrigger>().Activate(false);
             ActivateTrigger(true);
@@ -167,7 +192,7 @@ public class PlayerController : MonoBehaviour
     
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "PowerPad")
+        if (col.gameObject.tag == "PowerPad" && myID == col.GetComponent<PowerPadTrigger>().usableByPlayer || col.GetComponent<PowerPadTrigger>().usableByPlayer == 0)
         {
             col.GetComponent<PowerPadTrigger>().Deactivate();
         }
