@@ -16,9 +16,20 @@ public class PlayerController : MonoBehaviour
     public string verticalMove = "";
     public string jump = "";
     public string power = "";
+	
+	//Particle Systems Input
+	public ParticleSystem Woosh;
+	public ParticleSystem Peter;
+	
+	//Particle Systems Input
+	public AudioClip[] StepsSounds;
+	public AudioClip[] JumpSounds;
+	public AudioClip[] LandSounds;
+	public AudioClip[] DeathSound;
 
     //Grounding Check
     private bool _onGround = false;
+    private bool CanWalkCycle = true;
 
     //Right character for platform check
     public int myID = 0;
@@ -43,6 +54,13 @@ public class PlayerController : MonoBehaviour
     {
         WhoAmI();
     }
+	
+	void TakeAStep(){
+		
+		GetComponent<AudioSource>().PlayOneShot(StepsSounds[Random.Range(0,4)],0.67f);
+		
+		
+	}
 
     void Update()
     {
@@ -62,6 +80,11 @@ public class PlayerController : MonoBehaviour
 			
 			if(_onGround)
             {
+				if(CanWalkCycle){
+					InvokeRepeating("TakeAStep",0f,0.4f);
+					CanWalkCycle = false;
+				}
+				
 			    rig.Run();
 			}
             transform.rotation = Quaternion.LookRotation(velocityAxis);
@@ -70,6 +93,8 @@ public class PlayerController : MonoBehaviour
         {
 			if(_onGround)
             {
+				CancelInvoke("TakeAStep");
+				CanWalkCycle = true;
 			    rig.Idle();
 			}
 		}
@@ -80,6 +105,7 @@ public class PlayerController : MonoBehaviour
         // Check the player's input
         if (Input.GetButtonDown(jump))
         {
+			
             Jump();
         }
         if (Input.GetButton(power))
@@ -107,6 +133,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_onGround)
         {
+			GetComponent<AudioSource>().PlayOneShot(JumpSounds[Random.Range(0,3)],0.67f);
 			rig.Jump();
             GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpStrength, 0));
         }
@@ -134,11 +161,11 @@ public class PlayerController : MonoBehaviour
         //Can activate power
         if (_onGround && onPowerPad && isTheRightCharacter)
         {
-            //ANIMATION TRIGGER: ACTIVATING PAD
+            Woosh.Emit(250);
         }
         else if (_onGround && onPowerPad && !isTheRightCharacter)
         {
-            //ANIMATION TRIGGER: FAILING TO ACTIVATE PAD (WRONG PLAYER)
+            Peter.Emit(250);
         }
         //Can activate, but does not work
         else if (_onGround)
@@ -154,6 +181,9 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.layer == 8)
         {
             //print("landed");
+			 if (col.relativeVelocity.magnitude > 4)
+			GetComponent<AudioSource>().PlayOneShot(LandSounds[Random.Range(0,3)],0.67f);
+		
 			rig.Land();
             _onGround = true;
         }
@@ -166,6 +196,9 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.layer == 8 && !_onGround)
         {
             //print("landed");
+			
+			if (col.relativeVelocity.magnitude > 4)
+			GetComponent<AudioSource>().PlayOneShot(LandSounds[Random.Range(0,3)],0.67f);
             rig.Land();
             _onGround = true;
         }
@@ -222,7 +255,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (col.gameObject.tag == "Kill")
         {
-            Lose();
+            StartCoroutine("Lose");
         }
         else if (col.gameObject.tag == "Win")
         {
@@ -263,7 +296,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (col.gameObject.tag == "Kill")
         {
-            Lose();
+            //
         }
         else if (col.gameObject.tag == "Win")
         {
@@ -294,11 +327,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Lose()
+    IEnumerator Lose()
     {
+		Debug.Log("Kill!");
+		GetComponent<AudioSource>().PlayOneShot(DeathSound[Random.Range(0,4)],0.67f);
         //print ("you lose");
         //Set menu to Lose Screen
         ApplicationModel.menuState = 2;
+		yield return new WaitForSeconds(2.0f);
         SceneManager.LoadScene(0);
     }
 

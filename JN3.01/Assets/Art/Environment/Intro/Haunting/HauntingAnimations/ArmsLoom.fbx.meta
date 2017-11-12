@@ -1,0 +1,273 @@
+fileFormatVersion: 2
+guid: 8aa6af2d0a152aa4eb03cf9778b4aad8
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: BeastMainMesh
+    100004: FurPatch
+    100006: FurPatch1
+    100008: FurPatch2
+    100010: FurPatch3
+    100012: FurPatch4
+    100014: FurPatch5
+    100016: FurPatch6
+    100018: FurPatch7
+    100020: FurPatch8
+    100022: joint1
+    100024: joint10
+    100026: joint11
+    100028: joint12
+    100030: joint13
+    100032: joint14
+    100034: joint15
+    100036: joint17
+    100038: joint18
+    100040: joint19
+    100042: joint2
+    100044: joint21
+    100046: joint22
+    100048: joint3
+    100050: joint4
+    100052: joint5
+    100054: joint6
+    100056: joint7
+    100058: joint8
+    100060: joint9
+    100062: Leaf1
+    100064: pCylinder1
+    100066: pCylinder2
+    100068: pCylinder7
+    100070: pCylinder8
+    400000: //RootNode
+    400002: BeastMainMesh
+    400004: FurPatch
+    400006: FurPatch1
+    400008: FurPatch2
+    400010: FurPatch3
+    400012: FurPatch4
+    400014: FurPatch5
+    400016: FurPatch6
+    400018: FurPatch7
+    400020: FurPatch8
+    400022: joint1
+    400024: joint10
+    400026: joint11
+    400028: joint12
+    400030: joint13
+    400032: joint14
+    400034: joint15
+    400036: joint17
+    400038: joint18
+    400040: joint19
+    400042: joint2
+    400044: joint21
+    400046: joint22
+    400048: joint3
+    400050: joint4
+    400052: joint5
+    400054: joint6
+    400056: joint7
+    400058: joint8
+    400060: joint9
+    400062: Leaf1
+    400064: pCylinder1
+    400066: pCylinder2
+    400068: pCylinder7
+    400070: pCylinder8
+    2300000: FurPatch
+    2300002: FurPatch1
+    2300004: FurPatch2
+    2300006: FurPatch3
+    2300008: FurPatch4
+    2300010: FurPatch5
+    2300012: FurPatch6
+    2300014: FurPatch7
+    2300016: FurPatch8
+    2300018: pCylinder1
+    2300020: pCylinder2
+    2300022: pCylinder7
+    2300024: pCylinder8
+    3300000: FurPatch
+    3300002: FurPatch1
+    3300004: FurPatch2
+    3300006: FurPatch3
+    3300008: FurPatch4
+    3300010: FurPatch5
+    3300012: FurPatch6
+    3300014: FurPatch7
+    3300016: FurPatch8
+    3300018: pCylinder1
+    3300020: pCylinder2
+    3300022: pCylinder7
+    3300024: pCylinder8
+    4300000: BeastMainMesh
+    4300002: FurPatch1
+    4300004: FurPatch2
+    4300006: pCylinder2
+    4300008: pCylinder8
+    4300010: FurPatch4
+    4300012: FurPatch6
+    4300014: pCylinder1
+    4300016: pCylinder7
+    4300018: FurPatch5
+    4300020: FurPatch7
+    4300022: FurPatch8
+    4300024: FurPatch
+    4300026: FurPatch3
+    7400000: HauntingArmsLurk
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: BeastMainMesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: HauntingArmsLurk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 199
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BeastMainMesh
+        weight: 1
+      - path: joint1
+        weight: 1
+      - path: joint1/joint2
+        weight: 1
+      - path: joint1/joint2/joint3
+        weight: 1
+      - path: joint1/joint2/joint3/FurPatch1
+        weight: 1
+      - path: joint1/joint2/joint3/joint4
+        weight: 1
+      - path: joint1/joint2/joint3/joint4/joint5
+        weight: 1
+      - path: joint1/joint6
+        weight: 1
+      - path: joint1/joint6/joint7
+        weight: 1
+      - path: joint1/joint6/joint7/FurPatch2
+        weight: 1
+      - path: joint1/joint6/joint7/joint8
+        weight: 1
+      - path: joint1/joint6/joint7/joint8/joint9
+        weight: 1
+      - path: joint1/joint10
+        weight: 1
+      - path: joint1/joint10/FurPatch3
+        weight: 1
+      - path: joint1/joint10/joint11
+        weight: 1
+      - path: joint1/joint10/joint11/FurPatch
+        weight: 1
+      - path: joint1/joint10/joint11/joint12
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint13
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint13/FurPatch6
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint13/joint14
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint13/joint14/FurPatch4
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint13/joint14/joint15
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint13/joint14/joint15/pCylinder2
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint13/joint14/joint15/pCylinder8
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint17
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint17/FurPatch7
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint17/joint18
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint17/joint18/FurPatch5
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint17/joint18/joint19
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint17/joint18/joint19/pCylinder1
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint17/joint18/joint19/pCylinder7
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint17/joint18/Leaf1
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint21
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint21/FurPatch8
+        weight: 1
+      - path: joint1/joint10/joint11/joint12/joint21/joint22
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

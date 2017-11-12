@@ -9,8 +9,7 @@ public class PowerPadTrigger : MonoBehaviour {
 	public Material[] pressurePlateMaterials;
 	public Material[] litPressurePlateMaterials;
 	public int usableByPlayer; // 0 = both, 1 = p1, 2 = p2
-	public AudioClip pressed;
-	public AudioClip depressed;
+	public AudioClip[] Pressed;
 	Renderer skin;
 	
     void Start () {
@@ -36,7 +35,7 @@ public class PowerPadTrigger : MonoBehaviour {
         if (initialActivation)
         {
             //Only trigger sound at start
-            GetComponent<AudioSource>().PlayOneShot(pressed, 1.0f);
+            GetComponent<AudioSource>().PlayOneShot(Pressed[Random.Range(0,6)], 1f);
         }
         skin.material = litPressurePlateMaterials[usableByPlayer];
 
@@ -50,7 +49,7 @@ public class PowerPadTrigger : MonoBehaviour {
     public void Deactivate()
     {
         //Depress PowerPad
-        GetComponent<AudioSource>().PlayOneShot(depressed,1.0f);
+        GetComponent<AudioSource>().PlayOneShot(Pressed[Random.Range(0,6)],1f);
 		skin.material = pressurePlateMaterials[usableByPlayer];
 
         //Deactivate platforms

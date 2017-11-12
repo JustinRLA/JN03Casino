@@ -1517,10 +1517,10 @@ MeshCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 195405138}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: e69069575d23ff7488b703f1ce649042, type: 3}
@@ -11964,19 +11964,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4164268081353640, guid: ac7ed4b3496efc04d9c3018897434b58, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 1.0848332e-10
+      value: 1.08483326e-10
       objectReference: {fileID: 0}
     - target: {fileID: 4164268081353640, guid: ac7ed4b3496efc04d9c3018897434b58, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000011590876
+      value: -0.0000000011590877
       objectReference: {fileID: 0}
     - target: {fileID: 4164268081353640, guid: ac7ed4b3496efc04d9c3018897434b58, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.6132408
+      value: 0.61324084
       objectReference: {fileID: 0}
     - target: {fileID: 4164268081353640, guid: ac7ed4b3496efc04d9c3018897434b58, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.789896
+      value: 0.7898961
       objectReference: {fileID: 0}
     - target: {fileID: 4164268081353640, guid: ac7ed4b3496efc04d9c3018897434b58, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -12861,11 +12861,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4892925812429746, guid: 3ba33b778f0063e40a5af3fb37cf94fb, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.77
       objectReference: {fileID: 0}
     - target: {fileID: 4892925812429746, guid: 3ba33b778f0063e40a5af3fb37cf94fb, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.242
       objectReference: {fileID: 0}
     - target: {fileID: 4892925812429746, guid: 3ba33b778f0063e40a5af3fb37cf94fb, type: 2}
       propertyPath: m_LocalRotation.x
@@ -24748,6 +24748,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1138897103}
     m_Modifications:
+    - target: {fileID: 114843435308353902, guid: a31c3bb692f40364da7b14a5232d2862,
+        type: 2}
+      propertyPath: Pressed.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4047021783960034, guid: a31c3bb692f40364da7b14a5232d2862, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3.253
@@ -24792,6 +24797,11 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 1.288
       objectReference: {fileID: 0}
+    - target: {fileID: 114843435308353902, guid: a31c3bb692f40364da7b14a5232d2862,
+        type: 2}
+      propertyPath: Pressed.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8303749461cb0fc4c9bf79ec1ebd8bf5, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a31c3bb692f40364da7b14a5232d2862, type: 2}
   m_IsPrefabParent: 0

@@ -5,16 +5,17 @@ using UnityEngine;
 public class TimedPlay : MonoBehaviour {
 
 public float timer;
+public AnimationClip fuckyou;
 
 	void Start () {
 
-Wait();
+StartCoroutine("Wait");
 	
 	}
 	
 	// Update is called once per frame
  IEnumerator Wait() {
 			yield return new WaitForSeconds(timer);
-	GetComponent<Animation>().Play();
+	GetComponent<Animation>().CrossFade(fuckyou.name,0.5f);
 	}
 }
