@@ -68,4 +68,10 @@ public class PlatformController : MonoBehaviour {
             //Stays in place
         }
     }
+
+    public void BackToDefault()
+    {
+        GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
+        GetComponent<Animation>().CrossFade("PressurePlateLower");
+    }
 }

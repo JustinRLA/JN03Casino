@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class KillController : MonoBehaviour {
 
-    public Transform startHeight;
-    public Transform endHeight;
-    public float speed = 1.0F;
-    private float startTime;
-    private float journeyLength;
-    void Start()
+    public Transform startingPosition;
+    public Transform targetPosition;
+    public float speed = 0.5f;
+
+    void Update()
     {
-        startTime = Time.time;
-        journeyLength = Vector3.Distance(startHeight.position, endHeight.position);
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, step);
     }
-    void FixedUpdate()
+
+    public void BackToDefault()
     {
-        float distCovered = (Time.time - startTime) * speed;
-        float fracJourney = distCovered / journeyLength;
-        transform.position = Vector3.Lerp(startHeight.position, endHeight.position, fracJourney);
+        transform.position = startingPosition.position;
     }
 }

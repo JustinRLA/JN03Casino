@@ -11,6 +11,9 @@ TagManager:
   - Player2
   - Kill
   - Win
+  - Respawn0
+  - Respawn1
+  - Respawn2
   layers:
   - Default
   - TransparentFX

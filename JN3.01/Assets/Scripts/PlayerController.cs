@@ -19,10 +19,24 @@ public class PlayerController : MonoBehaviour
 
     //Grounding Check
     private bool _onGround = false;
+
+    //Right character for platform check
     public int myID = 0;
 	
-	
     public CharacterAnimator rig;
+
+    //Respawn system stuff
+    public GameObject otherPlayer;
+    public int currentStage = 0;
+
+    public GameObject[] respawnPoint;
+    public GameObject[] dangerZone;
+
+    bool ruinsDangerStarted = false;
+    bool heavenDangerStarted = false;
+
+    public GameObject[] platforms;
+
 
     // Use this for initialization
     void Start()
@@ -70,7 +84,8 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetButton(power))
         {
-            ActivateTrigger(false);
+            //ActivateTrigger(false);
+            Die();
         }
 
         LimitVelocity();
@@ -114,17 +129,21 @@ public class PlayerController : MonoBehaviour
     }
 
     //Animation Controller for power use (Assumes we can use power while not on pad, but it does a fail animation; if not, just do in OnTrigger functions)
-    private void ActivateTrigger(bool onPowerPad)
+    private void ActivateTrigger(bool onPowerPad, bool isTheRightCharacter)
     {
         //Can activate power
-        if (_onGround && onPowerPad)
+        if (_onGround && onPowerPad && isTheRightCharacter)
         {
             //ANIMATION TRIGGER: ACTIVATING PAD
+        }
+        else if (_onGround && onPowerPad && !isTheRightCharacter)
+        {
+            //ANIMATION TRIGGER: FAILING TO ACTIVATE PAD (WRONG PLAYER)
         }
         //Can activate, but does not work
         else if (_onGround)
         {
-            //ANIMATION TRIGGER: ACTIVATING NOTHING
+            //ANIMATION TRIGGER: ACTIVATING NOTHING (NOT ON PAD)
         }
     }
 
@@ -164,10 +183,42 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "PowerPad" && myID == col.GetComponent<PowerPadTrigger>().usableByPlayer || col.GetComponent<PowerPadTrigger>().usableByPlayer == 0)
+        if (col.gameObject.tag == "PowerPad")
         {
-            col.GetComponent<PowerPadTrigger>().Activate(true);
-            ActivateTrigger(true);
+            if(myID == col.GetComponent<PowerPadTrigger>().usableByPlayer || col.GetComponent<PowerPadTrigger>().usableByPlayer == 0)
+            {
+                col.GetComponent<PowerPadTrigger>().Activate(true);
+                ActivateTrigger(true, true);
+            }
+            else
+            {
+                ActivateTrigger(true, false);
+            }
+        }
+        if (col.gameObject.tag == "Respawn0")
+        {
+            //Set player respawn point and value
+            currentStage = 0;
+        }
+        else if (col.gameObject.tag == "Respawn1")
+        {
+            //Set player respawn point and value
+            currentStage = 1;
+            if (!ruinsDangerStarted)
+            {
+                dangerZone[currentStage].SetActive(true);
+                ruinsDangerStarted = true;
+            }
+        }
+        else if (col.gameObject.tag == "Respawn2")
+        {
+            //Set player respawn point and value
+            currentStage = 2;
+            if (!heavenDangerStarted)
+            {
+                dangerZone[currentStage].SetActive(true);
+                heavenDangerStarted = true;
+            }
         }
         else if (col.gameObject.tag == "Kill")
         {
@@ -183,18 +234,63 @@ public class PlayerController : MonoBehaviour
     void OnTriggerStay(Collider col)
     {
         //When in the zone of a Power Pad, check for power use to trigger pad's effects
-        if (col.gameObject.tag == "PowerPad" && myID == col.GetComponent<PowerPadTrigger>().usableByPlayer || col.GetComponent<PowerPadTrigger>().usableByPlayer == 0)
+        if (col.gameObject.tag == "PowerPad")
         {
-            col.GetComponent<PowerPadTrigger>().Activate(false);
-            ActivateTrigger(true);
+            if (myID == col.GetComponent<PowerPadTrigger>().usableByPlayer || col.GetComponent<PowerPadTrigger>().usableByPlayer == 0)
+            {
+                col.GetComponent<PowerPadTrigger>().Activate(false);
+                ActivateTrigger(true, true);
+            }
+            else
+            {
+                ActivateTrigger(true, false);
+            }
+        }
+        if (col.gameObject.tag == "Respawn0")
+        {
+            //Set player respawn point and value
+            currentStage = 0;
+        }
+        else if (col.gameObject.tag == "Respawn1")
+        {
+            //Set player respawn point and value
+            currentStage = 1;
+        }
+        else if (col.gameObject.tag == "Respawn2")
+        {
+            //Set player respawn point and value
+            currentStage = 2;
+        }
+        else if (col.gameObject.tag == "Kill")
+        {
+            Lose();
+        }
+        else if (col.gameObject.tag == "Win")
+        {
+            Win();
         }
     }
     
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "PowerPad" && myID == col.GetComponent<PowerPadTrigger>().usableByPlayer || col.GetComponent<PowerPadTrigger>().usableByPlayer == 0)
+        if (col.gameObject.tag == "PowerPad")
         {
-            col.GetComponent<PowerPadTrigger>().Deactivate();
+            if(myID == col.GetComponent<PowerPadTrigger>().usableByPlayer || col.GetComponent<PowerPadTrigger>().usableByPlayer == 0)
+            {
+                col.GetComponent<PowerPadTrigger>().Deactivate();
+            }
+        }
+    }
+
+    public void Die()
+    {
+        transform.position = respawnPoint[currentStage].transform.position;
+        otherPlayer.transform.position = otherPlayer.GetComponent<PlayerController>().respawnPoint[currentStage].transform.position;
+        dangerZone[currentStage].GetComponent<KillController>().BackToDefault();
+        platforms = GameObject.FindGameObjectsWithTag("PowerPad");
+        foreach (GameObject platform in platforms)
+        {
+            platform.GetComponent<PowerPadTrigger>().BackToDefaultTrigger();
         }
     }
 
