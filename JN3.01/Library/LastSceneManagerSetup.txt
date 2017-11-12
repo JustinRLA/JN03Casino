@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/INTRO_CUTSCENE.unity
-=======
-- path: Assets/Scenes/LevelBaseLD clone.unity
->>>>>>> c6b37dfff86959145193b2d0c688f58da7d547d1
+- path: Assets/Scenes/Level1.unity
   isLoaded: 1
   isActive: 1

@@ -273,11 +273,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (col.gameObject.tag == "Kill")
         {
-<<<<<<< HEAD
-            StartCoroutine("Lose");
-=======
+         //   StartCoroutine("Die");
             Die();
->>>>>>> c6b37dfff86959145193b2d0c688f58da7d547d1
         }
         else if (col.gameObject.tag == "Win")
         {
@@ -318,11 +315,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (col.gameObject.tag == "Kill")
         {
-<<<<<<< HEAD
-            //
-=======
             Die();
->>>>>>> c6b37dfff86959145193b2d0c688f58da7d547d1
         }
         else if (col.gameObject.tag == "Win")
         {
@@ -341,8 +334,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Die()
+    void Die()
     {
+		StartCoroutine("RealDeath");
+    }
+	
+	    IEnumerator RealDeath()
+    {
+		GetComponent<AudioSource>().PlayOneShot(DeathSound[Random.Range(0,4)],0.67f);
+		yield return new WaitForSeconds(2.0f);
+		
         transform.position = respawnPoint[currentStage].transform.position;
         otherPlayer.transform.position = otherPlayer.GetComponent<PlayerController>().respawnPoint[currentStage].transform.position;
         dangerZone[currentStage].GetComponent<KillController>().BackToDefault();
@@ -352,6 +353,8 @@ public class PlayerController : MonoBehaviour
             platform.GetComponent<PowerPadTrigger>().BackToDefaultTrigger();
         }
     }
+	
+	
 
     IEnumerator Lose()
     {
