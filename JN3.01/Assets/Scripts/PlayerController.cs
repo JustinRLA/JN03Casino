@@ -313,10 +313,11 @@ public class PlayerController : MonoBehaviour
             //Set player respawn point and value
             currentStage = 2;
         }
+        /*
         else if (col.gameObject.tag == "Kill")
         {
             Die();
-        }
+        }*/
         else if (col.gameObject.tag == "Win")
         {
             Win();
@@ -336,6 +337,7 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
+        print("die");
 		StartCoroutine("RealDeath");
     }
 	
