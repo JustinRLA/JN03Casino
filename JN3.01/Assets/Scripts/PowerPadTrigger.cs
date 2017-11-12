@@ -59,4 +59,12 @@ public class PowerPadTrigger : MonoBehaviour {
             gO.GetComponent<PlatformController>().Deactivated();
         }
     }
+
+    public void BackToDefaultTrigger()
+    {
+        foreach (GameObject gO in platforms)
+        {
+            gO.GetComponent<PlatformController>().BackToDefault();
+        }
+    }
 }
