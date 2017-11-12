@@ -10,7 +10,7 @@ public class GameCamera : MonoBehaviour {
 
 	void Update () {
 		
-		transform.position =  new Vector3(0,((player1.transform.position.y + player2.transform.position.y)/2)+3.53f,((player1.transform.position.z + player2.transform.position.z)/2)-4.31f);
+		transform.position =  new Vector3(0,((player1.transform.position.y + player2.transform.position.y)/2)+5f,((player1.transform.position.z + player2.transform.position.z)/2)-6f);
 		
 		
 	}

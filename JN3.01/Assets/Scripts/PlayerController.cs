@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
 
-    // Public variables that will show up in the Editor
-    public float Acceleration = 50f;
-    public float MaxSpeed = 20f;
-    public float JumpStrength = 500f;
+    //Movement Params
+    public float acceleration = 50f;
+    public float maxSpeed = 20f;
+    public float jumpStrength = 500f;
 
     //Player Control Inputs
     public string horizontalMove = "";
@@ -16,8 +17,11 @@ public class PlayerController : MonoBehaviour
     public string jump = "";
     public string power = "";
 
-    // Private variables.  These will not be accessible from any other class.
+    //Grounding Check
     private bool _onGround = false;
+	
+	
+    public CharacterAnimator rig;
 
     // Use this for initialization
     void Start()
@@ -25,25 +29,38 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         // Get the player's input axes
         float xSpeed = Input.GetAxis(horizontalMove);
         float zSpeed = Input.GetAxis(verticalMove);
+
         // Get the movement vector
         Vector3 velocityAxis = new Vector3(xSpeed, 0, zSpeed);
+
         // Rotate the movement vector based on the camera
         velocityAxis = Quaternion.AngleAxis(Camera.main.transform.eulerAngles.y, Vector3.up) * velocityAxis;
 
+		
+		
+		
         // Rotate the player's model to show direction
         if (velocityAxis.magnitude > 0)
         {
+			
+						if(_onGround){
+			rig.Run();
+			}
             transform.rotation = Quaternion.LookRotation(velocityAxis);
-        }
+        }else{
+			if(_onGround){
+			rig.Idle();
+			}
+		
+		}
 
         // Move the player
-        GetComponent<Rigidbody>().AddForce(velocityAxis.normalized * Acceleration);
+        GetComponent<Rigidbody>().AddForce(velocityAxis.normalized * acceleration);
 
         // Check the player's input
         if (Input.GetButtonDown(jump))
@@ -58,36 +75,40 @@ public class PlayerController : MonoBehaviour
         LimitVelocity();
     }
 
-    /// <summary>
-    /// Keeps the player's velocity limited so it will not go too fast.
-    /// </summary>
+    void FixedUpdate()
+    {
+    }
+
+    //Limit velocity to maxSpeed
     private void LimitVelocity()
     {
         Vector2 xzVel = new Vector2(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.z);
-        if (xzVel.magnitude > MaxSpeed)
+        if (xzVel.magnitude > maxSpeed)
         {
-            xzVel = xzVel.normalized * MaxSpeed;
+            xzVel = xzVel.normalized * maxSpeed;
             GetComponent<Rigidbody>().velocity = new Vector3(xzVel.x, GetComponent<Rigidbody>().velocity.y, xzVel.y);
         }
     }
 
-    /// <summary>
-    /// Applies force to the player's rigidbody to make him jump.
-    /// </summary>
+    //Jumping
     private void Jump()
     {
         if (_onGround)
         {
-            GetComponent<Rigidbody>().AddForce(new Vector3(0, JumpStrength, 0));
+			rig.Jump();
+            GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpStrength, 0));
         }
     }
 
+    //Animation Controller for power use (Assumes we can use power while not on pad, but it does a fail animation; if not, just do in OnTrigger functions)
     private void ActivateTrigger(bool onPowerPad)
     {
+        //Can activate power
         if (_onGround && onPowerPad)
         {
             //ANIMATION TRIGGER: ACTIVATING PAD
         }
+        //Can activate, but does not work
         else if (_onGround)
         {
             //ANIMATION TRIGGER: ACTIVATING NOTHING
@@ -97,45 +118,81 @@ public class PlayerController : MonoBehaviour
     //Ground checks
     void OnCollisionEnter(Collision col)
     {
+        //Use layer "Ground" as check to verify collision
         if (col.gameObject.layer == 8)
         {
-            print("landed");
+            //print("landed");
+			rig.Land();
             _onGround = true;
-            GetComponent<Rigidbody>().AddForce(0,0,0);
         }
     }
 
-    //consider when character is jumping .. it will exit collision.
+    //Deactivate grounding when jumping
     void OnCollisionExit(Collision col)
     {
         if (col.gameObject.layer == 8)
         {
-            print("airborne");
+            //print("airborne");
             _onGround = false;
         }
     }
 
-    void OnTriggerStay(Collider col)
+    void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "PowerPad")
         {
-            if (Input.GetButtonDown(power))
-            {
-                col.GetComponent<PowerPadTrigger>().Activate();
-                ActivateTrigger(true);
-            }
-            else if (Input.GetButtonUp(power))
-            {
-                col.GetComponent<PowerPadTrigger>().Deactivate();
-            }
+            col.GetComponent<PowerPadTrigger>().Activate(true);
+            ActivateTrigger(true);
+        }
+        else if (col.gameObject.tag == "Kill")
+        {
+            Lose();
+        }
+        else if (col.gameObject.tag == "Win")
+        {
+            Win();
         }
     }
 
+    //Trigger zone detection
+    void OnTriggerStay(Collider col)
+    {
+        //When in the zone of a Power Pad, check for power use to trigger pad's effects
+        if (col.gameObject.tag == "PowerPad")
+        {
+            col.GetComponent<PowerPadTrigger>().Activate(false);
+            ActivateTrigger(true);
+        }
+    }
+    
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "PowerPad" && Input.GetButton(power))
+        if (col.gameObject.tag == "PowerPad")
         {
             col.GetComponent<PowerPadTrigger>().Deactivate();
         }
+    }
+
+    void Lose()
+    {
+        //print ("you lose");
+        //Set menu to Lose Screen
+        ApplicationModel.menuState = 2;
+        SceneManager.LoadScene(0);
+    }
+
+    void Win()
+    {
+        //print ("you win");
+        //Set menu to Win Screen
+        ApplicationModel.menuState = 1;
+        SceneManager.LoadScene(0);
+    }
+
+    void MainMenu()
+    {
+        //Set menu to Main Menu Screen
+        ApplicationModel.menuState = 0;
+        SceneManager.LoadScene(0);
     }
 }

@@ -1,0 +1,260 @@
+fileFormatVersion: 2
+guid: 3b44f2cc60590734aa6d13039585e900
+timeCreated: 1510436038
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: joint10
+    100004: joint11
+    100006: joint12
+    100008: joint13
+    100010: joint14
+    100012: joint15
+    100014: joint16
+    100016: joint17
+    100018: joint18
+    100020: joint19
+    100022: joint2
+    100024: joint20
+    100026: joint21
+    100028: joint22
+    100030: joint23
+    100032: joint24
+    100034: joint3
+    100036: joint4
+    100038: joint5
+    100040: joint6
+    100042: joint7
+    100044: joint8
+    100046: joint9
+    100048: NakedChainMailDude
+    100050: pCube10
+    100052: pCube11
+    100054: pCube12
+    100056: pCube13
+    100058: pCube14
+    100060: pCube15
+    100062: pCube16
+    100064: pCube17
+    100066: pCube2
+    100068: pCube9
+    100070: pCylinder1
+    100072: pCylinder2
+    100074: pCylinder3
+    100076: polySurface1
+    100078: polySurface10
+    100080: polySurface11
+    100082: polySurface2
+    100084: polySurface3
+    100086: polySurface4
+    100088: polySurface5
+    100090: polySurface6
+    100092: polySurface7
+    100094: polySurface8
+    100096: polySurface9
+    100098: pSphere1
+    100100: Root
+    100102: transform10
+    100104: transform11
+    100106: transform12
+    100108: transform13
+    100110: transform14
+    100112: transform2
+    100114: transform3
+    100116: transform4
+    100118: transform5
+    100120: transform6
+    100122: transform7
+    100124: transform8
+    100126: transform9
+    400000: //RootNode
+    400002: joint10
+    400004: joint11
+    400006: joint12
+    400008: joint13
+    400010: joint14
+    400012: joint15
+    400014: joint16
+    400016: joint17
+    400018: joint18
+    400020: joint19
+    400022: joint2
+    400024: joint20
+    400026: joint21
+    400028: joint22
+    400030: joint23
+    400032: joint24
+    400034: joint3
+    400036: joint4
+    400038: joint5
+    400040: joint6
+    400042: joint7
+    400044: joint8
+    400046: joint9
+    400048: NakedChainMailDude
+    400050: pCube10
+    400052: pCube11
+    400054: pCube12
+    400056: pCube13
+    400058: pCube14
+    400060: pCube15
+    400062: pCube16
+    400064: pCube17
+    400066: pCube2
+    400068: pCube9
+    400070: pCylinder1
+    400072: pCylinder2
+    400074: pCylinder3
+    400076: polySurface1
+    400078: polySurface10
+    400080: polySurface11
+    400082: polySurface2
+    400084: polySurface3
+    400086: polySurface4
+    400088: polySurface5
+    400090: polySurface6
+    400092: polySurface7
+    400094: polySurface8
+    400096: polySurface9
+    400098: pSphere1
+    400100: Root
+    400102: transform10
+    400104: transform11
+    400106: transform12
+    400108: transform13
+    400110: transform14
+    400112: transform2
+    400114: transform3
+    400116: transform4
+    400118: transform5
+    400120: transform6
+    400122: transform7
+    400124: transform8
+    400126: transform9
+    2300000: polySurface1
+    2300002: polySurface10
+    2300004: polySurface11
+    2300006: polySurface2
+    2300008: polySurface3
+    2300010: polySurface4
+    2300012: polySurface5
+    2300014: polySurface6
+    2300016: polySurface7
+    2300018: polySurface8
+    2300020: polySurface9
+    3300000: polySurface1
+    3300002: polySurface10
+    3300004: polySurface11
+    3300006: polySurface2
+    3300008: polySurface3
+    3300010: polySurface4
+    3300012: polySurface5
+    3300014: polySurface6
+    3300016: polySurface7
+    3300018: polySurface8
+    3300020: polySurface9
+    4300000: NakedChainMailDude
+    4300002: polySurface9
+    4300004: polySurface10
+    4300006: polySurface8
+    4300008: polySurface3
+    4300010: polySurface1
+    4300012: polySurface2
+    4300014: polySurface4
+    4300016: polySurface5
+    4300018: polySurface11
+    4300020: polySurface7
+    4300022: polySurface6
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: NakedChainMailDude
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CircleKnightMaterial
+    second: {fileID: 2100000, guid: 60add7850e00ce644be364a3dc6296b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 02f02ba111d7dfc4e8dff8bc5dd0bb6b, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.4
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
