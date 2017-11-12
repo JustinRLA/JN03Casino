@@ -321,7 +321,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1603264078046348, guid: 7e5c5ad2773d2fa42b7cb5869db7a480, type: 2}
       propertyPath: m_Name
-      value: RespawnHeaven
+      value: P1_RespawnHeaven
       objectReference: {fileID: 0}
     - target: {fileID: 1603264078046348, guid: 7e5c5ad2773d2fa42b7cb5869db7a480, type: 2}
       propertyPath: m_TagString
@@ -422,7 +422,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1603264078046348, guid: 7e5c5ad2773d2fa42b7cb5869db7a480, type: 2}
       propertyPath: m_Name
-      value: RespawnRuins
+      value: P1_RespawnRuins
       objectReference: {fileID: 0}
     - target: {fileID: 1603264078046348, guid: 7e5c5ad2773d2fa42b7cb5869db7a480, type: 2}
       propertyPath: m_TagString
@@ -718,7 +718,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1603264078046348, guid: 7e5c5ad2773d2fa42b7cb5869db7a480, type: 2}
       propertyPath: m_Name
-      value: RespawnHeaven (1)
+      value: P2_RespawnHeaven
       objectReference: {fileID: 0}
     - target: {fileID: 1603264078046348, guid: 7e5c5ad2773d2fa42b7cb5869db7a480, type: 2}
       propertyPath: m_TagString
@@ -1026,7 +1026,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1603264078046348, guid: 7e5c5ad2773d2fa42b7cb5869db7a480, type: 2}
       propertyPath: m_Name
-      value: RespawnRuins (1)
+      value: P2_RespawnRuins
       objectReference: {fileID: 0}
     - target: {fileID: 1603264078046348, guid: 7e5c5ad2773d2fa42b7cb5869db7a480, type: 2}
       propertyPath: m_TagString
@@ -1086,7 +1086,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1603264078046348, guid: 7e5c5ad2773d2fa42b7cb5869db7a480, type: 2}
       propertyPath: m_Name
-      value: RespawnHell
+      value: P1_RespawnHell
       objectReference: {fileID: 0}
     - target: {fileID: 1603264078046348, guid: 7e5c5ad2773d2fa42b7cb5869db7a480, type: 2}
       propertyPath: m_TagString
@@ -1400,7 +1400,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1603264078046348, guid: 7e5c5ad2773d2fa42b7cb5869db7a480, type: 2}
       propertyPath: m_Name
-      value: RespawnHell (1)
+      value: P2_RespawnHell
       objectReference: {fileID: 0}
     - target: {fileID: 1603264078046348, guid: 7e5c5ad2773d2fa42b7cb5869db7a480, type: 2}
       propertyPath: m_TagString
@@ -1595,7 +1595,7 @@ Prefab:
     - target: {fileID: 114176532502004426, guid: a31c3bb692f40364da7b14a5232d2862,
         type: 2}
       propertyPath: platformType
-      value: Solidify
+      value: Collapsing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a31c3bb692f40364da7b14a5232d2862, type: 2}
