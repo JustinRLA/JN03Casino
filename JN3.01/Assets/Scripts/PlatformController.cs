@@ -95,6 +95,7 @@ public class PlatformController : MonoBehaviour {
     {
         GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
         GetComponent<Animation>().CrossFade("PressurePlateLower");
+        isActive = false;
     }
 
     IEnumerator countdownToCollapse(float timer)

@@ -85,6 +85,24 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton(power))
         {
             //ActivateTrigger(false);
+            //Die();
+        }
+        if (Input.GetButton("Cheat1"))
+        {
+            //ActivateTrigger(false);
+            currentStage = 0;
+            Die();
+        }
+        if (Input.GetButton("Cheat2"))
+        {
+            //ActivateTrigger(false);
+            currentStage = 1;
+            Die();
+        }
+        if (Input.GetButton("Cheat3"))
+        {
+            //ActivateTrigger(false);
+            currentStage = 2;
             Die();
         }
 
@@ -222,7 +240,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (col.gameObject.tag == "Kill")
         {
-            Lose();
+            Die();
         }
         else if (col.gameObject.tag == "Win")
         {
@@ -263,7 +281,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (col.gameObject.tag == "Kill")
         {
-            Lose();
+            Die();
         }
         else if (col.gameObject.tag == "Win")
         {
