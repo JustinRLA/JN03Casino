@@ -1595,7 +1595,7 @@ Prefab:
     - target: {fileID: 114176532502004426, guid: a31c3bb692f40364da7b14a5232d2862,
         type: 2}
       propertyPath: platformType
-      value: Solidify
+      value: Collapsing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a31c3bb692f40364da7b14a5232d2862, type: 2}

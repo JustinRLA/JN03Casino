@@ -11,6 +11,8 @@ public class PlatformController : MonoBehaviour {
     public Material[] litBlockMaterials;
     public int usableByPlayer;
 
+    public float collapseTime = 1.0f;
+
     bool isActive = false;
 
     // Use this for initialization
@@ -37,7 +39,7 @@ public class PlatformController : MonoBehaviour {
             //GetComponent<BoxCollider>().enabled = true;
             GetComponent<Renderer>().material = litBlockMaterials[usableByPlayer];
         }
-        if (platformType == "Solidify")
+        else if (platformType == "Solidify")
         {
             //Only triggers once
             if (!isActive)
@@ -51,7 +53,22 @@ public class PlatformController : MonoBehaviour {
                 isActive = true;
             }
                 //Don't do anything special
+        }
+        else if (platformType == "Collapsing")
+        {
+            //Only triggers once
+            if (!isActive)
+            {
+                if (initialActivationPlatform)
+                {
+                    isActive = true;
+                    GetComponent<Animation>().CrossFade("PressurePlateRise");
+                    GetComponent<Renderer>().material = litBlockMaterials[usableByPlayer];
+                    //start countdown then collapses
+                    StartCoroutine(countdownToCollapse(collapseTime));
+                }
             }
+        }
     }
 
     public void Deactivated()
@@ -63,14 +80,28 @@ public class PlatformController : MonoBehaviour {
             GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
             GetComponent<Animation>().CrossFade("PressurePlateLower");
         }
-        if (platformType == "Solidify")
+        else if (platformType == "Solidify")
         {
             //Stays in place
+        }
+        else if (platformType == "Collapsing")
+        {
+            //Allowed to be activated again
+            isActive = false;
         }
     }
 
     public void BackToDefault()
     {
+        GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
+        GetComponent<Animation>().CrossFade("PressurePlateLower");
+    }
+
+    IEnumerator countdownToCollapse(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+
+        //At end of timer, collapses
         GetComponent<Renderer>().material = blockMaterials[usableByPlayer];
         GetComponent<Animation>().CrossFade("PressurePlateLower");
     }
