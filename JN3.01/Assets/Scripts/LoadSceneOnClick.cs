@@ -18,6 +18,6 @@ public class LoadSceneOnClick : MonoBehaviour
     {
         //AkSoundEngine.PostEvent("SFX_Button_Start_Retro", playBtn);
         //AkSoundEngine.PostEvent("Play_Music", music);
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene("INTRO_CUTSCENE");
     }
 }
