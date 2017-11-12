@@ -6,12 +6,12 @@ public class MusicManager : MonoBehaviour {
 
 public GameObject KillTrigger;
 public GameObject WinTrigger;
-public GameObject PsychoPlayer;
+//public GameObject PsychoPlayer;
 public Transform Player;
 float TotalDistance;
 float KillDistance;
 float WinDistance;
-float PsychoDistance;
+//float PsychoDistance;
 	
 	void Start () {
 		TotalDistance = Vector3.Distance(KillTrigger.transform.position, WinTrigger.transform.position);
@@ -24,7 +24,7 @@ float PsychoDistance;
 		
 		KillTrigger.GetComponent<AudioSource>().volume = (KillDistance / TotalDistance) * 1;
 		WinTrigger.GetComponent<AudioSource>().volume = (WinDistance / TotalDistance) * 1;
-		PsychoPlayer.GetComponent<AudioSource>().volume = -KillDistance + 5;
+	//	PsychoPlayer.GetComponent<AudioSource>().volume = -KillDistance + 5;
 	
 		
 	}

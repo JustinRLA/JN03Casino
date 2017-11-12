@@ -135,7 +135,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 641471410}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: d23fd7a03020ee744a7f7c76439166bb, type: 3}
+  m_Texture: {fileID: 2800000, guid: c4700434796c78e4ba64979dfb0d92d3, type: 3}
   m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_PixelInset:
     serializedVersion: 2
@@ -250,7 +250,7 @@ GUITexture:
   m_GameObject: {fileID: 1083390709}
   m_Enabled: 1
   m_Texture: {fileID: 2800000, guid: f8833deea4e2a4e409385b0c4eff7e8f, type: 3}
-  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.391}
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.666}
   m_PixelInset:
     serializedVersion: 2
     x: 0
@@ -286,13 +286,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boards:
-  - {fileID: 2800000, guid: 47f19b02fbba7f345a269b7fb2644940, type: 3}
-  - {fileID: 2800000, guid: a8afe5e34b9ce7848b5dd69a1db1011a, type: 3}
-  - {fileID: 2800000, guid: 8dbb61d0213761946a1693283e667348, type: 3}
+  - {fileID: 2800000, guid: 91e80752ecb152f438e5dee7888cead7, type: 3}
+  - {fileID: 2800000, guid: d880b65b70a4e8b4881c77022fd2d319, type: 3}
+  - {fileID: 2800000, guid: 378cfde59d7d2ad45bac41dacfcc3226, type: 3}
   Lines:
   - After much effort and sacrifice, we prevailed.
   - Glowing, we then made our way back to town...
-  - Loading Game...
+  - ' '
   Text: {fileID: 1490699767}
   Texture: {fileID: 641471411}
 --- !u!1 &1490699766

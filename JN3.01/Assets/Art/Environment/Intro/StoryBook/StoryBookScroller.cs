@@ -24,7 +24,7 @@ public class StoryBookScroller : MonoBehaviour {
 			Texture.texture = Boards[index];
 			
 			
-			if(Text.text == "Loading Game..."){
+			if(Text.text == " "){
 				StartCoroutine("LoadGame");
 			}
 			
@@ -35,7 +35,7 @@ public class StoryBookScroller : MonoBehaviour {
 	IEnumerator LoadGame(){
 	
 	yield return new WaitForSeconds(2);
-	SceneManager.LoadScene("Level1");
+	SceneManager.LoadScene("Level2");
 }
 	
 	
