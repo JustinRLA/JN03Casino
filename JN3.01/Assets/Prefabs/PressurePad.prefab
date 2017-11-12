@@ -406,7 +406,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.836
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -444,7 +444,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -536,5 +536,5 @@ MonoBehaviour:
   - {fileID: 2100000, guid: dcc7882a452799b4581fceb451731235, type: 2}
   - {fileID: 2100000, guid: 275799ef2e6d166468c157f1af8cc593, type: 2}
   usableByPlayer: 1
-  pressed: {fileID: 0}
-  depressed: {fileID: 0}
+  pressed: {fileID: 8300000, guid: 8303749461cb0fc4c9bf79ec1ebd8bf5, type: 3}
+  depressed: {fileID: 8300000, guid: 8303749461cb0fc4c9bf79ec1ebd8bf5, type: 3}
